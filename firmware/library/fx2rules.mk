@@ -36,7 +36,7 @@ $(LIBFX2)/.stamp: $(wildcard $(LIBFX2)/*.c $(LIBFX2)/*.asm $(LIBFX2)/include/*.h
 -include build/*.d
 build/%.rel: %.c
 	@mkdir -p $(dir $@)
-	$(SDCC) -Wp,-MQ,$@,-MMD,build/$*.d -c -o $@ $<
+	$(SDCC) -Wp,-MQ,$@,-MMD,-MF,build/$*.d -c -o $@ $<
 
 build/%.rel: %.asm
 	@mkdir -p $(dir $@)

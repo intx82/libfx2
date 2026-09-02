@@ -27,9 +27,7 @@ enum usb_mass_storage_request {
   USB_REQ_MASS_STORAGE_BOMSR                = 0xff,
 };
 
-enum {
-  USB_MASS_STORAGE_CBW_SIGNATURE            = 0x43425355,
-};
+#define  USB_MASS_STORAGE_CBW_SIGNATURE           0x43425355UL
 
 enum usb_mass_storage_cbw_flags {
   USB_MASS_STORAGE_CBW_FLAG_DATA_IN         = 0b10000000,
@@ -49,9 +47,7 @@ struct usb_mass_storage_cbw {
 typedef __xdata struct usb_mass_storage_cbw
   usb_mass_storage_cbw_t;
 
-enum {
-  USB_MASS_STORAGE_CSW_SIGNATURE            = 0x53425355,
-};
+#define  USB_MASS_STORAGE_CSW_SIGNATURE            0x53425355UL
 
 enum usb_mass_storage_csw_status {
   USB_MASS_STORAGE_CSW_STATUS_PASSED        = 0x00,
